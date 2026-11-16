@@ -91,6 +91,8 @@ El comando `fuser` permite comprobar si un proceso está utilizando un archivo. 
 
 También añado `set -e` al principio del script para que, si se produce algún error durante la instalación, la ejecución se detenga y no continúe como si todo hubiera salido correctamente.
 
+![Modificación scrip install_lamp](images/nuevo_install.png)
+
 - Comprobación de los procesos de Ubuntu: como el aprovisionamiento seguía esperando, accedo a la máquina virtual mediante:
 
 ```bash
@@ -128,10 +130,13 @@ Además, añado una comprobación para verificar que el archivo descargado es un
 ```bash
 unzip -tq prestashop.zip
 ```
+![Modificación scrip deploy_prestashop](images/nuevo_deploy.png)
 
 Este comando comprueba la integridad del archivo comprimido. Si existe algún problema, el script se detiene gracias a `set -e`.
 
 - Modificación del aprovisionamiento: Por último, modifico `provision.sh` para añadir también `set -e`, de manera que el aprovisionamiento se detenga si falla alguno de los dos scripts.
+
+![Modificación del archivo de provisionamiento](images/nuevo_provision.png)
 
 
 Una vez corregidos los scripts, vuelvo a ejecutar:
@@ -170,7 +175,7 @@ Aparece el asistente de instalación de PrestaShop, lo instalo y compruebo que p
 ![Tienda Prestashop](images/tienda.png)
 
 
-#### 5. Conclusiópn de la práctica
+#### 5. Conclusión de la práctica
 
 Con esta práctica he podido aprender sobre cómo desplegar con éxito la plataforma PrestaShop sobre un entorno virtualizado local con Vagrant, utilizando scripts automatizados para la configuración de la pila LAMP, la gestión de dependencias y la conexión con bases de datos. Así conseguimos un entorno de trabajo fiable y aislado, perfecto para desarrollar y administrar la tienda online sin complicaciones desde cualquier acceso controlado.
 
